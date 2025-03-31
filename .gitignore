@@ -1,0 +1,70 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Environment variables file
+.env
+*.env
+
+# Flask cache and instance folder
+instance/
+*.log
+*.sqlite3
+*.db
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings (if using VSCode)
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Linux system files
+*.swp
+*.swo
+
+# Node.js dependencies (if applicable)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Test and debug artifacts
+.tox/
+.pytest_cache/
+*.pytest_cache/
+*.pyo
+*.pyd
+
+# Static and media files (if generated dynamically)
+staticfiles/
+mediafiles/
+
+# Flask migrations
+migrations/

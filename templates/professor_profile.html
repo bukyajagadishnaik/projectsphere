@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{current_user.prof_name}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5>University : {{university.clg_name}}</h5>
+            <h5>professor Id : {{professor.prof_id}}</h5>
+            <h5>E-Mail : {{professor.email}}</h5>
+            <h5>Department : {{professor.dept}}</h5>
+            <h5>Role : {{professor.role}}</h5>
+            <h5>Date Of Join : {{professor.doj}}</h5>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock content %}

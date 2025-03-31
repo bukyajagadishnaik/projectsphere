@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{current_user.stu_name}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h5>University : {{university.clg_name}}</h5>
+            <h5>Student Id : {{student.stu_id}}</h5>
+            <h5>E-Mail : {{student.email}}</h5>
+            <h5>Department : {{student.dept}}</h5>
+            <h5>Year : {{student.year_of_study}}</h5>
+            <h5>About Me : {{student.about_me}}</h5>
+            <a href="{{url_for('update_student_profile', stu_id=student.stu_id)}}" class="btn btn-outline-danger">Update Profile</a>
+        </div>
+        <div class="col-md-4">
+            {% if student.profile_pic %}
+            <img src="{{url_for('static',filename='images/student_profiles/' + student.profile_pic)}}" class="rounded-circle profile-pic"
+            alt="Profile Picture">                        
+            {% else %}
+            <img src="{{url_for('static',filename='images/default_profile.png')}}" class="rounded-circle profile-pic"
+                alt="Default Profile Picture">
+            {% endif %}
+        </div>
+    </div>
+    <table class="table table-striped table-hover shadow p-3 mb-5 bg-body rounded">
+        <h1>My Teams</h1>
+        <tr>
+            <th scope="col">Team Id</th>
+            <th scope="col">Team Lead</th>
+            <th scope="col">Member 1</th>
+            <th scope="col">Member 2</th>
+            <th scope="col">Member 3</th>
+            <th scope="col">Member 4</th>
+        </tr>
+        {% for team in teams %}
+        <tr>
+            <td>{{ team.team_id }}</td>
+            <td>{{ team.team_lead.stu_name }}</td>
+            <td>{{ team.member_1_student.stu_name }}</td>
+            <td>{{ team.member_2_student.stu_name }}</td>
+            <td>{{ team.member_3_student.stu_name }}</td>
+            <td>{{ team.member_4_student.stu_name }}</td>        
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{current_user.stu_name}}</h1>
+        </div>
+    </div>
+    <form method="POST" enctype="multipart/form-data" action="{{url_for('update_student_profile', stu_id=current_user.stu_id)}}">
+        {{form.hidden_tag()}}
+    
+        {{form.stu_id.label(class="form-label")}}
+        {{form.stu_id(class="form-control")}}
+        {{form.stu_name.label(class="form-label")}}
+        {{form.stu_name(class="form-control")}}
+        {{form.year_of_study.label(class="form-label")}}
+        {{form.year_of_study(class="form-control")}}
+        {{form.profile_pic.label(class="form-label")}}
+        {{form.profile_pic(class="form-control")}}
+        {{form.aboutme.label(class="form-label")}}
+        {{form.aboutme(class="form-control")}}
+        <br />
+        {{form.submit(class="btn btn-secondary")}}
+    </form>
+
+
+    <div class="col-md-4">
+        {% if current_user.profile_pic %}
+        <img src="{{url_for('static',filename='images/'+ current_user.profile_pic)}}" class="img-fluid"
+        width="150px" align="right">                        
+        {% else %}
+        <img src="{{url_for('static',filename='images/default_profile.png')}}" class="img-fluid"
+            width="150px" align="right">
+        {% endif %}
+        
+        
+    </div>
+</div>
+
+{% endblock content %}

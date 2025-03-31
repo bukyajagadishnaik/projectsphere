@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{current_user.director_name}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5>University : {{director.clg_name}}</h5>
+            <h5>University Id : {{director.clg_id}}</h5>
+            <h5>E-Mail : {{director.email}}</h5>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock content %}

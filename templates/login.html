@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- Flash Messages -->
+{% for message in get_flashed_messages() %}
+<div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+    <strong>Success:</strong> {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<!-- Login Form -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg border-0">
+                <div class="card-header text-center bg-gradient-primary text-white">
+                    <h3 class="fw-bold">Welcome Back</h3>
+                    <p class="mb-0">Please login to your account</p>
+                </div>
+                <div class="card-body p-4">
+                    <form method="POST">
+                        {{ form.hidden_tag() }}
+                        
+                        <!-- Login As -->
+                        <div class="mb-4">
+                            {{ form.login_as.label(class="form-label fw-semibold") }}
+                            {{ form.login_as(class="form-control rounded-pill") }}
+                        </div>
+
+                        <!-- ID -->
+                        <div class="mb-4">
+                            {{ form.id.label(class="form-label fw-semibold") }}
+                            {{ form.id(class="form-control rounded-pill") }}
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-4">
+                            {{ form.password.label(class="form-label fw-semibold") }}
+                            {{ form.password(class="form-control rounded-pill") }}
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            {{ form.submit(class="btn btn-primary btn-lg rounded-pill") }}
+                        </div>
+                    </form>
+                
+                <div class="card-footer text-center  text-white">
+                    <!-- Forgot Password Section -->
+                    <a href="" class="btn btn-link text-danger mb-3">Forgot Password?</a>
+                    
+                    <!-- Registration Links -->
+                    <p class="mb-2 text-light fw-semibold">Don't have an account?</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <a href="{{ url_for('register_stu') }}" class="btn btn-outline-light btn-sm">Register as Student</a>
+                        <a href="{{ url_for('register_prof') }}" class="btn btn-outline-light btn-sm">Register as Professor</a>
+                        <a href="{{ url_for('register_director') }}" class="btn btn-outline-light btn-sm">Register as Director</a>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+    </div>
+</div>
+{% endblock %}

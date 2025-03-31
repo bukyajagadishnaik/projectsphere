@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h6>Suggest Project </h6>
+    <form method="POST">
+        {{form.hidden_tag()}}
+
+        {{form.domain.label(class="form-label")}}
+        {{form.domain(class="form-control")}}
+        {{form.difficulty.label(class="form-label")}}
+        {{form.difficulty(class="form-control")}}
+        {{form.skills.label(class="form-label")}}
+        {{form.skills(class="form-control")}}
+        {{form.estimated_time.label(class="form-label")}}
+        {{form.estimated_time(class="form-control")}}
+
+        <br />
+        {{form.submit(class="btn btn-secondary")}}
+    </form>
+
+</div>
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-md-12">
+            
+            {% if predicted_project %}
+            <h6>We Suggest You to work on <strong>{{predicted_project}}</strong></h6>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
