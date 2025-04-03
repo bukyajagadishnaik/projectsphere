@@ -46,7 +46,7 @@ def predict():
         required_skills = form.skills.data
         estimated_time = form.estimated_time.data
         
-        print(domain,difficulty,required_skills,estimated_time)
+        print(domain, difficulty, required_skills, estimated_time)
         
         # Create a DataFrame for the input
         input_data = pd.DataFrame({
@@ -56,13 +56,24 @@ def predict():
             'estimated_time': [int(estimated_time)]
         })
         print(input_data)
+        
         # Make prediction
         predicted_project = ProjectModel.predict(input_data)
         print(predicted_project)
         predicted_project = " ".join(map(str, predicted_project))
         print(f"Predicted Project: {predicted_project}")
-        return render_template('project_suggest.html', form = form , predicted_project = predicted_project)
-    return render_template('project_suggest.html', form = form)
+        
+        # Set the flag to show the modal
+        show_modal = True
+        
+        # Clear the form by reinitializing it
+        form.domain.data = ''  # Reset the form
+        form.difficulty.data = ''
+        form.skills.data = ''
+        form.estimated_time.data = ''
+        return render_template('project_suggest.html', form=form, predicted_project=predicted_project,show_modal=show_modal)
+    
+    return render_template('project_suggest.html', form=form)
 
 
 @app.route("/")
@@ -405,6 +416,7 @@ def projects():
         return redirect(url_for('login'))
 
 @app.route('/assign_project', methods=['GET', 'POST'])
+@login_required
 def assign_project():
     form = ProjectForm()
     if form.validate_on_submit():

@@ -13,6 +13,7 @@
     --gray-color: #c6c9d8bf;
     --gradient-bg-color: linear-gradient(-244deg, var(--primary-bg-color), 0, #a7ff33 80%);
     --gradient-text: linear-gradient(90deg, #82c6fd 20.69%, #ec31e3 50.19%, #ebfc00cc 79.69%);
+    --gradient-subtext: linear-gradient(145deg, #ec31e3 50.19%, #5078fccc 79.69%);
     --primary-font: 'Poppins', sans-serif;
     --secondary-font: 'Roboto', sans-serif;
     --tertiary-font: cera-round-pro, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -33,6 +34,8 @@ body {
     margin: 0;
     padding: 0;
     padding-top: 72px;
+    background-color: rgb(27, 185, 238);
+    background-color: rgba(143, 188, 143, 0.5); /* darkseagreen with 0.7 opacity */
 }
 
 
@@ -46,11 +49,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-dark-blue);
+    background: rgb(63, 235, 226);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-bg-color);
+    background: rgb(3, 56, 65);
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -122,7 +125,7 @@ a {
     letter-spacing: 0.5px;
     font-size: 25px;
     text-transform: uppercase;
-    background: var(--gradient-text);
+    background: var(--gradient-subtext);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

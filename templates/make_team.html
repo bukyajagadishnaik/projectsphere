@@ -2,20 +2,67 @@
 
 {% block content %}
 <style>
+    /* Form Container Styling */
     .form-container {
         background: #f8f9fa;
         border: 1px solid #dee2e6;
         border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-bottom: 30px;
     }
 
+    .form-container h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .form-label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #495057;
+    }
+
+    .form-control {
+        border-radius: 20px;
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .btn-secondary {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background-color: #0056b3;
+    }
+
+    /* Table Container Styling */
     .table-container {
         background: #ffffff;
         border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-container h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 0;
     }
 
     .table thead {
@@ -26,15 +73,16 @@
     .table th, .table td {
         vertical-align: middle;
         text-align: center;
+        padding: 10px;
+        font-size: 1rem;
     }
 
-    .btn-secondary {
-        background-color: #6c757d;
-        border: none;
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f8f9fa;
     }
 
-    .btn-secondary:hover {
-        background-color: #5a6268;
+    .table-hover tbody tr:hover {
+        background-color: #e9ecef;
     }
 </style>
 
@@ -46,31 +94,31 @@
             {{ form.hidden_tag() }}
             
             <div class="mb-3">
-                {{ form.team_id.label(class="form-label fw-semibold") }}
-                {{ form.team_id(class="form-control rounded-pill") }}
+                {{ form.team_id.label(class="form-label") }}
+                {{ form.team_id(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.team_lead_id.label(class="form-label fw-semibold") }}
-                {{ form.team_lead_id(class="form-control rounded-pill") }}
+                {{ form.team_lead_id.label(class="form-label") }}
+                {{ form.team_lead_id(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.member_1.label(class="form-label fw-semibold") }}
-                {{ form.member_1(class="form-control rounded-pill") }}
+                {{ form.member_1.label(class="form-label") }}
+                {{ form.member_1(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.member_2.label(class="form-label fw-semibold") }}
-                {{ form.member_2(class="form-control rounded-pill") }}
+                {{ form.member_2.label(class="form-label") }}
+                {{ form.member_2(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.member_3.label(class="form-label fw-semibold") }}
-                {{ form.member_3(class="form-control rounded-pill") }}
+                {{ form.member_3.label(class="form-label") }}
+                {{ form.member_3(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.member_4.label(class="form-label fw-semibold") }}
-                {{ form.member_4(class="form-control rounded-pill") }}
+                {{ form.member_4.label(class="form-label") }}
+                {{ form.member_4(class="form-control") }}
             </div>
             <div class="d-grid">
-                {{ form.submit(class="btn btn-secondary btn-lg rounded-pill") }}
+                {{ form.submit(class="btn btn-secondary btn-lg") }}
             </div>
         </form>
     </div>
