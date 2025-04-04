@@ -12,7 +12,7 @@
     --white: #fff;
     --gray-color: #c6c9d8bf;
     --gradient-bg-color: linear-gradient(-244deg, var(--primary-bg-color), 0, #a7ff33 80%);
-    --gradient-text: linear-gradient(90deg, #82c6fd 20.69%, #ec31e3 50.19%, #ebfc00cc 79.69%);
+    --gradient-text: linear-gradient(65deg, #82c6fd 20.69%, #ec31e3 50.19%, #ebfc00cc 79.69%);
     --gradient-subtext: linear-gradient(145deg, #ec31e3 50.19%, #5078fccc 79.69%);
     --primary-font: 'Poppins', sans-serif;
     --secondary-font: 'Roboto', sans-serif;
